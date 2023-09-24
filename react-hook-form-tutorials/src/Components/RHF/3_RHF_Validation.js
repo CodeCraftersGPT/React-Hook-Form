@@ -1,13 +1,20 @@
 //import useForm hook
 import { useForm } from "react-hook-form";
 
-// create functin with name FetchData to get the data from jsonplaceholder post api
 
-
-export default function InputValidationForm() {
+export default function CustomValidationForm() {
     //import errors from useForm hook
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {    console.log(data);  };
+
+    // create custom validation for password to contain $ and # in the password
+    const passwordValidation = (value) => {
+        if (value.includes("$") && value.includes("#")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     return (    
 
@@ -21,7 +28,12 @@ export default function InputValidationForm() {
   <input type="email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
     {/* add error message code */}
     {errors.email && <p>Enter a valid email</p>}
-  
+  {/* add password with custom validation */}
+    <label>Password</label>
+
+    <input type="password" {...register("password", { required: true, validate: passwordValidation })} />
+    {/* add error message code */}
+    {errors.password && <p>Password must contain $ or #</p>}
   <input type="submit" />
 </form>)
 }

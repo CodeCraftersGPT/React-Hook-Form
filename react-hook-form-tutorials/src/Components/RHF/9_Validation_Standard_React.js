@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -23,9 +23,10 @@ function RegistrationForm() {
     );
   };
 
+  
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value } = e.target; // destructure the event object
+    setFormData({ ...formData, [name]: value });//name,email,password
 
     if (name === 'password') {
       if (!validatePassword(value)) {

@@ -13,8 +13,8 @@ import MyForm7 from './Components/RHF/7_PassEvent_register';
 function App() {
   return (
     <div className="App">
-      <MyForm7 />
-      {/* <CustomErrorMessage /> */}
+      {/* <MyForm7 /> */}
+      <CustomErrorMessage />
       {/* <InputValidationForm /> */}
       {/* use MyForm1 */}
       {/* <MyForm1 /> */}

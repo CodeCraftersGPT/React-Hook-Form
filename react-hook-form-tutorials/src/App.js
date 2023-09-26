@@ -6,13 +6,14 @@ import MyForm1 from './Components/RHF/2_RHF_InputFields';
 import InputValidationForm from './Components/RHF/3_RHF_Validation';
 import CustomErrorMessage from './Components/RHF/4_RHF_CustomErrorMessage';
 import MyForm5 from './Components/RHF/6_PassEvent';
+import MyForm7 from './Components/RHF/7_PassEvent_register';
+
 
 
 function App() {
   return (
     <div className="App">
-      <MyForm5 />
-
+      <MyForm7 />
       {/* <CustomErrorMessage /> */}
       {/* <InputValidationForm /> */}
       {/* use MyForm1 */}
